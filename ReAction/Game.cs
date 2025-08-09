@@ -8,6 +8,7 @@ using FFXIVClientStructs.FFXIV.Client.UI.Shell;
 using Hypostasis.Game.Structures;
 using Camera = FFXIVClientStructs.FFXIV.Client.Game.Camera;
 using GameObject = FFXIVClientStructs.FFXIV.Client.Game.Object.GameObject;
+using ReAction = ReActionEx.ReActionEx;
 
 namespace ReActionEx;
 
