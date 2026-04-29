@@ -75,7 +75,7 @@ public static unsafe class Game
     public static GameObject* GetGameObjectFromObjectID(ulong id) => fpGetGameObjectFromObjectID(id, false);
 
     // The game is dumb and I cannot check LoS easily because not facing the target will override it
-    public static bool IsActionOutOfRange(uint actionID, GameObject* o) => DalamudApi.ClientState.LocalPlayer is { } p && o != null
+    public static bool IsActionOutOfRange(uint actionID, GameObject* o) => DalamudApi.ObjectTable.LocalPlayer is { } p && o != null
         && FFXIVClientStructs.FFXIV.Client.Game.ActionManager.GetActionInRangeOrLoS(actionID, (GameObject*)p.Address, o) is 566; // Returns the log message (562 = LoS, 565 = Not Facing Target, 566 = Out of Range)
 
     public static GameObject* GetMouseOverObject(GameObjectArray* array)

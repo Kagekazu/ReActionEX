@@ -24,7 +24,7 @@ public unsafe class CameraRelativeActions : PluginModule
         if (reverseBackwardsDashes)
             rotation = rotation > 0 ? rotation - MathF.PI : rotation + MathF.PI;
 
-        fpSetGameObjectRotation((GameObject*)DalamudApi.ClientState.LocalPlayer!.Address, rotation);
+        fpSetGameObjectRotation((GameObject*)DalamudApi.ObjectTable.LocalPlayer!.Address, rotation);
     }
 
     private static void PostActionStack(ActionManager* actionManager, uint actionType, uint actionID, uint adjustedActionID, ref ulong targetObjectID, uint param, uint useType, int pvp)
