@@ -5,7 +5,7 @@ namespace ReActionEx.Modules;
 
 public unsafe class QueueMore : PluginModule
 {
-    private static readonly AsmPatch allowQueuingPatch = new("0F B6 49 22 83 E9 02 0F 84", [null, null, null, null, null, null, null, 0x90, 0xE9]);
+    private static readonly AsmPatch allowQueuingPatch = new("0F B6 49 22 83 E9 02 74", [null, null, null, null, null, null, null, 0x90, 0xE9]);
     private static ushort lastLBSequence = 0;
 
     public override bool ShouldEnable => ReActionEx.Config.EnableQueuingMore;
